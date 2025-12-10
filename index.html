@@ -1,1 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me — Yenilik</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
 
+        body {
+            background: #ffeef4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #ff8ab8;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        nav {
+            background: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #ff5a94;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #cc4575;
+        }
+
+        section {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        h2 {
+            color: #ff5a94;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ff5a94;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background: #ff8ab8;
+            color: white;
+            margin-top: 40px;
+        }
+
+        .contact a {
+            display: inline-block;
+            background: #ff5a94;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            margin-right: 10px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .contact a:hover {
+            background: #cc4575;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Hi, I'm Yenilik 👋</h1>
+    <p>Welcome to my personal website!</p>
+</header>
+
+<nav>
+    <a href="task.html">Tasks</a>
+    <a href="#about">About Me</a>
+    <a href="#projects">Projects</a>
+    <a href="#course">Course</a>
+    <a href="#learning">Currently Learning</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+    <h2>About Me</h2>
+    <div class="card">
+        <ul>
+            <li><strong>Name:</strong> Yenilik</li>
+            <li><strong>Major:</strong> Library Studies (кітапхана ісі)</li>
+            <li><strong>Interests:</strong> Singing, languages, volunteering, events</li>
+            <li><strong>Fun Fact:</strong> I sing and love learning new languages</li>
+        </ul>
+    </div>
+</section>
+
+<section id="projects">
+    <h2>Activities</h2>
+
+    <div class="card">
+        <h3>Volunteering</h3>
+        <ul>
+            <li>Volunteer at concerts and public events</li>
+            <li>Volunteer at conferences</li>
+            <li>Volunteer at IFLA WLIC 2025</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h3>Academic Experience</h3>
+        <ul>
+            <li>Studying at Kazakh National Women's Pedagogical University</li>
+            <li>Gaining experience in communication and information management</li>
+        </ul>
+    </div>
+</section>
+
+<section id="course">
+    <h2>Course</h2>
+    <div class="card">
+        <h3>Sololearn — Web Development</h3>
+        <ul>
+            <li><strong>Duration:</strong> 40 hours</li>
+            <li><strong>Why I chose it:</strong> I wanted to understand how websites work and learn real coding skills to create my own projects.</li>
+            <li><a href="https://www.sololearn.com/certificates/CC-BIBSDAYZ" target="_blank">View Certificate</a></li>
+        </ul>
+    </div>
+</section>
+
+<section id="learning">
+    <h2>Currently Learning</h2>
+    <div class="card">
+        <ul>
+            <li>Exploring career options beyond library studies</li>
+            <li>Learning organizational skills from events</li>
+            <li>Improving communication and teamwork abilities</li>
+        </ul>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <div class="card contact">
+        <a href="mailto:ekonya2409@gmail.com">Email</a>
+        <a href="https://github.com/ekonya2409-svg" target="_blank">GitHub</a>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 Yenilik. All rights reserved.</p>
+</footer>
+
+<script>
+    const links = document.querySelectorAll('nav a');
+
+    for (const link of links) {
+        const href = link.getAttribute('href');
+        if (href.startsWith('#')) {
+            // smooth scroll для секций на этой странице
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = href.substring(1);
+                const targetSection = document.getElementById(targetId);
+                if(targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        }
+        // ссылки на другие файлы (например, task.html) работают как обычные ссылки
+    }
+</script>
+
+</body>
+</html>
