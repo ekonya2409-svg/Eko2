@@ -122,26 +122,13 @@
 </header>
 
 <nav>
-    <a href="#tasks">Tasks</a>
+    <a href="task.html">Tasks</a>
     <a href="#about">About Me</a>
     <a href="#projects">Projects</a>
     <a href="#course">Course</a>
     <a href="#learning">Currently Learning</a>
     <a href="#contact">Contact</a>
 </nav>
-
-<!-- TASKS SECTION -->
-<section id="tasks">
-    <h2>Tasks</h2>
-    <div class="card">
-        <ul>
-            <li>Task 1 — Create About Me section with image and bio</li>
-            <li>Task 2 — Add navigation with smooth scrolling</li>
-            <li>Task 3 — Add projects and activities</li>
-            <li>Task 4 — Add links to certificate and GitHub</li>
-        </ul>
-    </div>
-</section>
 
 <section id="about">
     <h2>About Me</h2>
@@ -213,13 +200,21 @@
 
 <script>
     const links = document.querySelectorAll('nav a');
-    for(const link of links){
-        link.addEventListener('click', function(e){
-            e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            const targetSection = document.getElementById(targetId);
-            targetSection.scrollIntoView({ behavior: 'smooth' });
-        });
+
+    for (const link of links) {
+        const href = link.getAttribute('href');
+        if (href.startsWith('#')) {
+            // smooth scroll для секций на этой странице
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = href.substring(1);
+                const targetSection = document.getElementById(targetId);
+                if(targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        }
+        // ссылки на другие файлы (например, task.html) работают как обычные ссылки
     }
 </script>
 
