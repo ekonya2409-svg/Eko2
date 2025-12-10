@@ -1,1 +1,159 @@
-task
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Yenilik — Personal Profile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #fff5f9;
+      --card: #ffffff;
+      --pink-600: #ff5a94;
+      --pink-500: #ff8ab8;
+      --pink-400: #ffb1cf;
+      --muted: #6b6b6b;
+      --glass: rgba(255,255,255,0.6);
+      --radius: 14px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial; background:linear-gradient(180deg,var(--bg),#ffe6f0);color:#222}
+
+    .container{max-width:1000px;margin:36px auto;padding:24px}
+
+    header.site{
+      background:linear-gradient(135deg,var(--pink-600),var(--pink-500));
+      color:#fff;padding:32px;border-radius:18px;box-shadow:0 8px 30px rgba(255,90,148,0.12);display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+
+    .avatar{width:120px;height:120px;border-radius:18px;background:linear-gradient(180deg,#fff4fb,rgba(255,255,255,0.05));display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--pink-600);font-size:32px;flex-shrink:0}
+
+    .hdr-info h1{margin:0;font-size:28px;letter-spacing:0.2px}
+    .hdr-info p{margin:6px 0 0;color:rgba(255,255,255,0.95);font-weight:500}
+
+    .quick{display:flex;gap:12px;margin-top:12px}
+    .btn{background:var(--card);color:var(--pink-600);padding:9px 14px;border-radius:999px;text-decoration:none;font-weight:600;box-shadow:0 6px 18px rgba(255,90,148,0.08);display:inline-flex;gap:8px;align-items:center}
+
+    main.grid{display:grid;grid-template-columns:1fr 340px;gap:22px;margin-top:22px}
+
+    .card{background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:0 10px 30px rgba(13,13,13,0.06)}
+
+    h2{color:var(--pink-600);margin:0 0 10px 0;font-size:18px}
+    small.muted{color:var(--muted);display:block;margin-bottom:8px}
+
+    .about p{line-height:1.5;color:#333}
+
+    .list{display:grid;gap:8px}
+    .list .row{display:flex;justify-content:space-between;padding:10px;border-radius:10px;background:linear-gradient(180deg,#fff,#fff);align-items:center}
+    .skills{display:flex;flex-wrap:wrap;gap:8px}
+    .chip{background:linear-gradient(180deg,var(--pink-400),#ffd9ea);padding:6px 10px;border-radius:999px;font-weight:600;color:#7a1540}
+
+    .certs a{display:inline-block;margin-right:10px;margin-bottom:8px;padding:8px 12px;border-radius:10px;background:linear-gradient(90deg,var(--pink-500),var(--pink-400));color:#fff;text-decoration:none;font-weight:700}
+
+    .contact a{display:inline-block;margin-right:8px;color:var(--pink-600);text-decoration:none;font-weight:600}
+
+    .right .card + .card{margin-top:18px}
+
+    footer{margin-top:24px;text-align:center;color:var(--muted);font-size:14px}
+
+    /* responsive */
+    @media (max-width:900px){main.grid{grid-template-columns:1fr;}.avatar{width:96px;height:96px;font-size:26px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header class="site">
+      <div class="avatar">Y</div>
+      <div class="hdr-info">
+        <h1>Yenilik</h1>
+        <p>Student • Volunteer • Web development learner</p>
+        <div class="quick">
+          <a class="btn" href="mailto:ekonya2409@gmail.com">📧 Email</a>
+          <a class="btn" href="https://github.com/ekonya2409-svg" target="_blank">💻 GitHub</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="grid">
+      <section>
+        <div class="card about">
+          <h2>About Me</h2>
+          <small class="muted">Name • Address • City • Country</small>
+          <p><strong>Name:</strong> Yenilik<br>
+             <strong>Address:</strong> Jāņa iela 14, Rīga<br>
+             <strong>City:</strong> Riga, <strong>Country:</strong> Latvia</p>
+          <p>I am an active and motivated learner curious about technology, web development and languages. I enjoy volunteering at concerts and conferences, taking online courses, and building small projects to practice new skills.</p>
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <h2>Highlight</h2>
+          <p class="muted">Something about me</p>
+          <p>I am a motivated learner who explores modern technologies, takes online courses, and supports events as a volunteer. I value teamwork, creativity, and continuous growth.</p>
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <h2>Portfolio</h2>
+          <p class="muted">Selected interests & projects</p>
+          <ul style="line-height:1.6;color:#333">
+            <li>Web development exercises and small websites built while learning HTML/CSS/JS.</li>
+            <li>Volunteering & event support at concerts, conferences and IFLA WLIC 2025.</li>
+            <li>Personal exploration of AI concepts and practical tutorials.</li>
+          </ul>
+        </div>
+
+      </section>
+
+      <aside class="right">
+        <div class="card">
+          <h2>Course</h2>
+          <small class="muted">Completed learning</small>
+          <div class="list" style="margin-top:10px">
+            <div class="row">
+              <div>
+                <strong>Sololearn — Web Development</strong>
+                <div style="font-size:13px;color:var(--muted)">40 hours • Basics of HTML, CSS, JavaScript</div>
+              </div>
+              <div class="certs"><a href="https://www.sololearn.com/certificates/CC-BIBSDAYZ" target="_blank">Certificate</a></div>
+            </div>
+
+            <div class="row">
+              <div>
+                <strong>Introduction to Java — Sololearn</strong>
+                <div style="font-size:13px;color:var(--muted)">Fundamentals of programming (Java)</div>
+              </div>
+              <div class="certs"><a href="https://www.sololearn.com/certificates/CC-UIDP8PZZ" target="_blank">Certificate</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <h2>Skills</h2>
+          <small class="muted">Technical & soft skills</small>
+          <div class="skills" style="margin-top:10px">
+            <span class="chip">HTML</span>
+            <span class="chip">CSS</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">Java basics</span>
+            <span class="chip">Communication</span>
+            <span class="chip">Teamwork</span>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <h2>Contact</h2>
+          <small class="muted">Get in touch</small>
+          <div style="margin-top:10px">
+            <div><strong>Email:</strong> <a class="contact" href="mailto:ekonya2409@gmail.com">ekonya2409@gmail.com</a></div>
+            <div style="margin-top:8px"><strong>GitHub:</strong> <a class="contact" href="https://github.com/ekonya2409-svg" target="_blank">ekonya2409-svg</a></div>
+            <div style="margin-top:8px"><strong>Location:</strong> Riga, Latvia</div>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      © 2025 Yenilik — Built with ♥️ • Ready for GitHub Pages
+    </footer>
+  </div>
+</body>
+</html>
