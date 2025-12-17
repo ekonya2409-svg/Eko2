@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 18 & 19 - Form Logic</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #fff0f5; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        .card { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 25px rgba(255, 105, 180, 0.2); width: 350px; }
+        h2 { color: #ff69b4; text-align: center; }
+        label { color: #ffb6c1; font-weight: bold; display: block; margin-top: 10px; }
+        input { padding: 10px; border: 2px solid #ffb6c1; border-radius: 10px; width: 100%; box-sizing: border-box; margin-top: 5px; }
+        button { background: #ff69b4; color: white; border: none; padding: 12px; border-radius: 50px; cursor: pointer; font-weight: bold; width: 100%; margin-top: 20px; }
+        #display, #count { margin-top: 15px; color: #ff69b4; background: #fff9fb; padding: 10px; border-radius: 10px; font-size: 0.9em; }
+        .back { text-align: center; display: block; margin-top: 20px; text-decoration: none; color: #ffb6c1; font-size: 0.8em; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>User Form</h2>
+        <label>Full Name:</label>
+        <input type="text" id="name" placeholder="Enter name">
+        <label>Age:</label>
+        <input type="number" id="age" placeholder="Enter age">
+        <label>Email:</label>
+        <input type="email" id="email" placeholder="Enter email">
+        
+        <button onclick="processForm()">Show Data & Count</button>
+        
+        <div id="display">Data: (empty)</div>
+        <div id="count">Fields filled: 0</div>
+        
+        <a href="exam-tasks.html" class="back">← Back to Tasks</a>
+    </div>
+    <script>
+        function processForm() {
+            const name = document.getElementById('name').value;
+            const age = document.getElementById('age').value;
+            const email = document.getElementById('email').value;
+            
+            // Task 18: Display clearly
+            document.getElementById('display').innerHTML = `<b>Name:</b> ${name || '-'} <br> <b>Age:</b> ${age || '-'} <br> <b>Email:</b> ${email || '-'}`;
+            
+            // Task 19: Count filled fields
+            let fields = [name, age, email];
+            let filledCount = fields.filter(val => val.trim() !== "").length;
+            document.getElementById('count').innerText = "Fields filled: " + filledCount;
+        }
+    </script>
+</body>
+</html>
