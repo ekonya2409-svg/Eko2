@@ -42,4 +42,207 @@ a{color:#ff5a94;font-weight:bold;text-decoration:none}
 </style>
 </head>
 
+<body>
 
+<a href="exam-tasks.html">← Back to Exam Tasks</a>
+
+<h1>SET E — JavaScript Tasks</h1>
+
+<div class="task">
+<h3>1. Reverse a string</h3>
+<input id="s1">
+<button onclick="task1()">Run</button>
+<div class="result" id="r1"></div>
+</div>
+
+<div class="task">
+<h3>2. Extract 3rd and 4th characters</h3>
+<input id="s2">
+<button onclick="task2()">Run</button>
+<div class="result" id="r2"></div>
+</div>
+
+<div class="task">
+<h3>3. Find longest word</h3>
+<input id="s3">
+<button onclick="task3()">Run</button>
+<div class="result" id="r3"></div>
+</div>
+
+<div class="task">
+<h3>4. Convert to lowercase</h3>
+<input id="s4">
+<button onclick="task4()">Run</button>
+<div class="result" id="r4"></div>
+</div>
+
+<div class="task">
+<h3>5. Convert to uppercase</h3>
+<input id="s5">
+<button onclick="task5()">Run</button>
+<div class="result" id="r5"></div>
+</div>
+
+<div class="task">
+<h3>6. Count words & special symbols</h3>
+<input id="s6">
+<button onclick="task6()">Run</button>
+<div class="result" id="r6"></div>
+</div>
+
+<div class="task">
+<h3>7. Create array of numbers</h3>
+<button onclick="task7()">Run</button>
+<div class="result" id="r7"></div>
+</div>
+
+<div class="task">
+<h3>8. Display third element</h3>
+<button onclick="task8()">Run</button>
+<div class="result" id="r8"></div>
+</div>
+
+<div class="task">
+<h3>9. Find last element (popup)</h3>
+<button onclick="task9()">Run</button>
+</div>
+
+<div class="task">
+<h3>10. Find 10th character (popup)</h3>
+<button onclick="task10()">Run</button>
+</div>
+
+<div class="task">
+<h3>11. Map() double elements</h3>
+<button onclick="task11()">Run</button>
+<div class="result" id="r11"></div>
+</div>
+
+<div class="task">
+<h3>12. Splice delete elements</h3>
+<button onclick="task12()">Run</button>
+<div class="result" id="r12"></div>
+</div>
+
+<div class="task">
+<h3>13. Arithmetic operations</h3>
+<button onclick="task13()">Run</button>
+</div>
+
+<div class="task">
+<h3>14. Add two numbers</h3>
+<button onclick="task14()">Run</button>
+</div>
+
+<div class="task">
+<h3>15. Multiply two numbers</h3>
+<button onclick="task15()">Run</button>
+</div>
+
+<div class="task">
+<h3>16. Divide two numbers</h3>
+<button onclick="task16()">Run</button>
+</div>
+
+<div class="task">
+<h3>17. Check even / odd</h3>
+<button onclick="task17()">Run</button>
+</div>
+
+<div class="task">
+<h3>18. Display form data</h3>
+<input id="name">
+<input id="email">
+<button onclick="task18()">Show</button>
+<div class="result" id="r18"></div>
+</div>
+
+<div class="task">
+<h3>19. Count filled fields</h3>
+<button onclick="task19()">Count</button>
+<div class="result" id="r19"></div>
+</div>
+
+<div class="task">
+<h3>20. Create person object</h3>
+<button onclick="task20()">Run</button>
+<div class="result" id="r20"></div>
+</div>
+
+<script>
+function task1(){
+  document.getElementById("r1").innerText =
+  document.getElementById("s1").value.split('').reverse().join('')
+}
+
+function task2(){
+  let v=document.getElementById("s2").value
+  document.getElementById("r2").innerText=v.slice(2,4)
+}
+
+function task3(){
+  let w=document.getElementById("s3").value.split(' ')
+  document.getElementById("r3").innerText =
+  w.sort((a,b)=>b.length-a.length)[0]
+}
+
+function task4(){
+  document.getElementById("r4").innerText =
+  document.getElementById("s4").value.toLowerCase()
+}
+
+function task5(){
+  document.getElementById("r5").innerText =
+  document.getElementById("s5").value.toUpperCase()
+}
+
+function task6(){
+  let t=document.getElementById("s6").value
+  let words=t.trim().split(/\s+/).length
+  let symbols=t.replace(/[a-z0-9 ]/gi,'').length
+  document.getElementById("r6").innerText =
+  `Words: ${words}, Symbols: ${symbols}`
+}
+
+function task7(){document.getElementById("r7").innerText=[1,2,3,4,5]}
+function task8(){document.getElementById("r8").innerText=[1,2,3][2]}
+function task9(){alert([1,2,3,4,5].at(-1))}
+function task10(){
+  let t=prompt("Enter text")
+  alert(t && t.length>=10 ? t[9] : "Less than 10 characters")
+}
+function task11(){document.getElementById("r11").innerText=[1,2,3].map(x=>x*2)}
+function task12(){
+  let a=[1,2,3,4,5]; a.splice(1,2)
+  document.getElementById("r12").innerText=a
+}
+function task13(){
+  let a=+prompt("a"), b=+prompt("b"), op=prompt("+ - * /")
+  alert(eval(a+op+b))
+}
+function task14(){alert(+prompt("a")+ +prompt("b"))}
+function task15(){alert(prompt("a")*prompt("b"))}
+function task16(){alert(prompt("a")/prompt("b"))}
+function task17(){
+  let n=prompt("Number")
+  alert(n%2===0?"Even":"Odd")
+}
+function task18(){
+  document.getElementById("r18").innerText =
+  document.getElementById("name").value+" , "+
+  document.getElementById("email").value
+}
+function task19(){
+  let c=0
+  if(name.value)c++
+  if(email.value)c++
+  document.getElementById("r19").innerText=c
+}
+function task20(){
+  let p={name:"Yenilik",age:20,city:"Riga"}
+  document.getElementById("r20").innerText=JSON.stringify(p)
+}
+</script>
+
+</body>
+</html>
