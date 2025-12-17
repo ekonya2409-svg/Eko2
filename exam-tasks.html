@@ -90,44 +90,7 @@
 
     <a class="back" href="index.html">← Back to Profile</a>
   </div>
-  const taskData = [
-    { id: 1, title: "Reverse a string", logic: () => "Hello".split('').reverse().join('') },
-    { id: 2, title: "Extract 3rd and 4th characters", logic: () => "JavaScript".substring(2, 4) },
-    { id: 3, title: "Find longest word", logic: () => "Web Development is fun".split(' ').reduce((a, b) => a.length > b.length ? a : b) },
-    { id: 4, title: "Convert to lowercase", logic: () => "HELLO".toLowerCase() },
-    { id: 5, title: "Convert to uppercase", logic: () => "world".toUpperCase() },
-    { id: 6, title: "Count words & symbols", logic: () => {
-        let s = "Hello! @2025"; 
-        return `Words: ${s.split(' ').length}, Symbols: ${s.match(/[^a-zA-Z0-9\s]/g).length}`;
-    }},
-    { id: 7, title: "Create array of numbers", logic: () => [1, 2, 3, 4, 5].join(', ') },
-    { id: 8, title: "Display third element", logic: () => [10, 20, 30, 40][2] },
-    { id: 9, title: "Last element (popup)", logic: () => { alert("Last: 40"); return "Shown in alert"; } },
-    { id: 10, title: "10th character from popup", logic: () => { 
-        let val = prompt("Enter text (10+ chars):", "Learning JS is cool");
-        return val ? val[9] : "No input";
-    }},
-    { id: 11, title: "Map() double elements", logic: () => [1, 5, 10].map(x => x * 2).join(', ') },
-    { id: 12, title: "Splice: delete elements", logic: () => {
-        let arr = ["A", "B", "C", "D"]; arr.splice(1, 2); return arr.join(', ');
-    }},
-    { id: 13, title: "Arithmetic operations", logic: () => "10 + 5 = " + (10 + 5) },
-    { id: 14, title: "Function: add numbers", logic: () => ((a, b) => a + b)(15, 25) },
-    { id: 15, title: "Function: multiply numbers", logic: () => ((a, b) => a * b)(5, 5) },
-    { id: 16, title: "Function: divide numbers", logic: () => ((a, b) => a / b)(100, 4) },
-    { id: 17, title: "Check even/odd", logic: () => 10 % 2 === 0 ? "Even" : "Odd" },
-    { id: 18, title: "Display form data", logic: () => "Name: Alex, Age: 20" },
-    { id: 19, title: "Form fields count", logic: () => "Fields filled: 3" },
-    { id: 20, title: "Create person object", logic: () => JSON.stringify({name: "John", age: 30}) }
-];
 
-const container = document.getElementById('tasksList');
-
-taskData.forEach(task => {
-    const taskDiv = document.createElement('div');
-    taskDiv.className = 'task-item';
-    
-    taskDiv.innerHTML = `
         <div class="task-header" onclick="toggleTask(${task.id})">
             <span>${task.id}. ${task.title}</span>
             <span>▼</span>
