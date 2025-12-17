@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 6 - Word & Symbol Count</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #fff0f5; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        .card { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 25px rgba(255, 105, 180, 0.2); text-align: center; max-width: 450px; width: 90%; }
+        h2 { color: #ff69b4; }
+        textarea { padding: 12px; border: 2px solid #ffb6c1; border-radius: 10px; width: 100%; box-sizing: border-box; margin-bottom: 20px; resize: none; }
+        button { background: #ff69b4; color: white; border: none; padding: 12px 25px; border-radius: 50px; cursor: pointer; font-weight: bold; }
+        #result { margin-top: 25px; color: #ff69b4; font-size: 1.1em; line-height: 1.6; }
+        .back { margin-top: 20px; text-decoration: none; color: #ffb6c1; font-size: 0.9em; display: inline-block; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Task 6: Words & Symbols</h2>
+        <p style="color: #888;">Count words and special symbols in your text:</p>
+        <textarea id="userInput" rows="3">Hello! @2025 #coding</textarea>
+        <br>
+        <button onclick="analyzeText()">Analyze</button>
+        <div id="result">Results will appear here</div>
+        <br>
+        <a href="exam-tasks.html" class="back">← Back to Tasks</a>
+    </div>
+
+    <script>
+        function analyzeText() {
+            const str = document.getElementById('userInput').value;
+            const words = str.trim() === "" ? 0 : str.trim().split(/\s+/).length;
+            const symbols = (str.match(/[^a-zA-Z0-9\s]/g) || []).length;
+            document.getElementById('result').innerHTML = `Words: ${words}<br>Special Symbols: ${symbols}`;
+        }
+    </script>
+</body>
+</html>
