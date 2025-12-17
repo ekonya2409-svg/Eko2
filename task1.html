@@ -46,4 +46,64 @@
             background: #ff69b4; 
             color: white; 
             border: none; 
-            padding: 12px 25px;
+            padding: 12px 25px; 
+            border-radius: 50px; 
+            cursor: pointer; 
+            font-weight: bold;
+            transition: 0.3s ease;
+            width: 100%;
+        }
+        button:hover { 
+            background: #ff1493; 
+            transform: scale(1.02); 
+        }
+        #result { 
+            margin-top: 25px; 
+            font-weight: bold; 
+            color: #ff69b4; 
+            font-size: 1.2em;
+            word-wrap: break-word;
+        }
+        .back { 
+            margin-top: 20px; 
+            text-decoration: none; 
+            color: #ffb6c1; 
+            font-size: 0.9em; 
+            display: inline-block;
+        }
+        .back:hover {
+            color: #ff69b4;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>Task 1: Reverse String</h2>
+        <p>Enter any text below to see it reversed:</p>
+        
+        <input type="text" id="userInput" placeholder="Type something..." value="Hello World">
+        
+        <button onclick="reverseString()">Reverse Now</button>
+        
+        <div id="result">Result: ?</div>
+        
+        <br>
+        <a href="index.html" class="back">← Back to Profile</a>
+    </div>
+
+    <script>
+        function reverseString() {
+            const inputField = document.getElementById('userInput');
+            const resultDiv = document.getElementById('result');
+            
+            const originalText = inputField.value;
+            // Разделяем на символы, переворачиваем массив и соединяем обратно
+            const reversedText = originalText.split('').reverse().join('');
+            
+            resultDiv.innerText = "Result: " + reversedText;
+        }
+    </script>
+
+</body>
+</html>
