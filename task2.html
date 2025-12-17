@@ -1,40 +1,106 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task 2 - Extract Characters</title>
     <style>
-        body { font-family: sans-serif; background-color: #fff0f5; display: flex; flex-direction: column; align-items: center; padding: 50px; }
-        .card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center; }
-        input { padding: 10px; border: 1px solid #ff69b4; border-radius: 5px; width: 250px; margin-bottom: 10px; }
-        button { background: #ff69b4; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; }
-        #result { margin-top: 20px; font-weight: bold; color: #ff69b4; font-size: 1.2em; }
-        .back { margin-top: 20px; text-decoration: none; color: #666; font-size: 0.9em; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: #fff0f5; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center;
+            height: 100vh; 
+            margin: 0; 
+        }
+        .card { 
+            background: white; 
+            padding: 40px; 
+            border-radius: 20px; 
+            box-shadow: 0 10px 25px rgba(255, 105, 180, 0.2); 
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+        h2 { color: #ff69b4; margin-bottom: 20px; }
+        p { color: #888; margin-bottom: 20px; }
+        
+        input { 
+            padding: 12px; 
+            border: 2px solid #ffb6c1; 
+            border-radius: 10px; 
+            width: 100%; 
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 16px;
+        }
+        button { 
+            background: #ff69b4; 
+            color: white; 
+            border: none; 
+            padding: 12px 25px; 
+            border-radius: 50px; 
+            cursor: pointer; 
+            font-weight: bold;
+            transition: 0.3s ease;
+            width: 100%;
+        }
+        button:hover { 
+            background: #ff1493; 
+            transform: scale(1.02); 
+        }
+        #result { 
+            margin-top: 25px; 
+            font-weight: bold; 
+            color: #ff69b4; 
+            font-size: 1.2em;
+        }
+        .back { 
+            margin-top: 20px; 
+            text-decoration: none; 
+            color: #ffb6c1; 
+            font-size: 0.9em; 
+            display: inline-block;
+        }
+        .back:hover { color: #ff69b4; }
     </style>
 </head>
 <body>
+
     <div class="card">
-        <h2>Task 2: Extract 3rd & 4th characters</h2>
-        <p>Введите строку (минимум 4 символа):</p>
-        <input type="text" id="userInput" value="JavaScript">
+        <h2>Task 2: Extract Characters</h2>
+        <p>Enter a word (at least 4 letters) to get the 3rd and 4th characters:</p>
+        
+        <input type="text" id="userInput" placeholder="e.g., JavaScript" value="JavaScript">
+        
+        <button onclick="extractCharacters()">Extract Now</button>
+        
+        <div id="result">Result: ?</div>
+        
         <br>
-        <button onclick="extractChars()">Извлечь символы</button>
-        <div id="result"></div>
-        <br>
-        <a href="exam-tasks.html" class="back">← Вернуться к списку</a>
+        <a href="exam-tasks.html" class="back">← Back to Tasks</a>
     </div>
 
     <script>
-        function extractChars() {
-            const str = document.getElementById('userInput').value;
+        function extractCharacters() {
+            const inputField = document.getElementById('userInput');
+            const resultDiv = document.getElementById('result');
+            const str = inputField.value;
+
             if (str.length < 4) {
-                document.getElementById('result').innerText = "Ошибка: Слишком короткая строка!";
+                resultDiv.innerText = "Error: Please enter at least 4 characters!";
+                resultDiv.style.color = "#ff1493";
             } else {
-                // В JS индексы начинаются с 0, поэтому 3-й символ — это индекс 2, а 4-й — индекс 3
-                const chars = str.substring(2, 4);
-                document.getElementById('result').innerText = "3-й и 4-й символы: " + chars;
+                // In JS, index 2 is the 3rd character and index 3 is the 4th
+                const extracted = str.substring(2, 4);
+                resultDiv.innerText = "3rd & 4th chars: " + extracted;
+                resultDiv.style.color = "#ff69b4";
             }
         }
     </script>
+
 </body>
 </html>
