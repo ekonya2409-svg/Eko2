@@ -1,144 +1,64 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ru">
 <head>
-  <meta charset="utf-8">
-  <title>Exam Tasks — Yenilik</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fff5f9;
-      color: #222;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 20px;
-    }
-
-    h1 {
-      color: #ff5a94;
-      margin-bottom: 10px;
-    }
-
-    p {
-      color: #555;
-      margin-bottom: 30px;
-    }
-
-    .tasks {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 16px;
-    }
-
-    .task {
-      background: white;
-      padding: 16px;
-      border-radius: 12px;
-      text-decoration: none;
-      color: #ff5a94;
-      font-weight: bold;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-      text-align: center;
-    }
-
-    .task:hover {
-      background: #ffedf4;
-    }
-
-    .back {
-      display: inline-block;
-      margin-top: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      color: #ff5a94;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Exam Tasks - Set E</title>
+    <style>
+        body { font-family: sans-serif; background: #f4f4f4; padding: 20px; }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .task-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: 0.3s;
+            border: 1px solid #ddd;
+        }
+        .task-card:hover {
+            background: #007bff;
+            color: white;
+            transform: translateY(-3px);
+        }
+    </style>
 </head>
-
 <body>
-  <div class="container">
-    <h1>Exam Tasks</h1>
-    <p>Select a task to view details</p>
 
-    <div class="tasks">
-      <a class="task" href="task1.html">Task 1</a>
-      <a class="task" href="task2.html">Task 2</a>
-      <a class="task" href="task3.html">Task 3</a>
-      <a class="task" href="task4.html">Task 4</a>
-      <a class="task" href="task5.html">Task 5</a>
-      <a class="task" href="task6.html">Task 6</a>
-      <a class="task" href="task7.html">Task 7</a>
-      <a class="task" href="task8.html">Task 8</a>
-      <a class="task" href="task9.html">Task 9</a>
-      <a class="task" href="task10.html">Task 10</a>
-      <a class="task" href="task11.html">Task 11</a>
-      <a class="task" href="task12.html">Task 12</a>
-      <a class="task" href="task13.html">Task 13</a>
-      <a class="task" href="task14.html">Task 14</a>
-      <a class="task" href="task15.html">Task 15</a>
-      <a class="task" href="task16.html">Task 16</a>
-      <a class="task" href="task17.html">Task 17</a>
-      <a class="task" href="task18.html">Task 18</a>
-      <a class="task" href="task19.html">Task 19</a>
-      <a class="task" href="task20.html">Task 20</a>
+<h1 style="text-align:center;">SET E: JavaScript Tasks</h1>
+
+<div class="grid" id="menu">
     </div>
 
-    <a class="back" href="index.html">← Back to Profile</a>
-  </div>
+<script>
+    const menu = document.getElementById('menu');
+    const tasks = [
+        "Reverse a string", "Extract 3rd & 4th chars", "Find longest word",
+        "Lowercase", "Uppercase", "Words + Symbols count",
+        "Create array", "Display 3rd element", "Last element (popup)",
+        "10th char from popup", "Map() double", "Splice delete",
+        "Arithmetic operations", "Add numbers", "Multiply numbers",
+        "Divide numbers", "Check even/odd", "Display form data",
+        "Form data count", "Create person object"
+    ];
 
-        <div class="task-header" onclick="toggleTask(${task.id})">
-            <span>${task.id}. ${task.title}</span>
-            <span>▼</span>
-        </div>
-        <div id="content-${task.id}" class="task-content">
-            <button class="btn-run" onclick="runTask(${task.id})">Выполнить код</button>
-            <div id="res-${task.id}" class="result-area">Нажмите кнопку, чтобы увидеть результат</div>
-        </div>
-    
+    tasks.forEach((name, index) => {
+        const id = index + 1;
+        const a = document.createElement('a');
+        a.href = `task${id}.html`; // Ссылка на файл task1.html, task2.html и т.д.
+        a.className = 'task-card';
+        a.innerHTML = `Task ${id}<br><small>${name}</small>`;
+        menu.appendChild(a);
+    });
+</script>
+
 </body>
 </html>
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>SET E — Exam Tasks</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<style>
-body{
-  font-family: Arial, sans-serif;
-  background:#fff5f9;
-  padding:30px;
-}
-h1{color:#ff5a94}
-.task{
-  background:#fff;
-  padding:20px;
-  margin-bottom:16px;
-  border-radius:12px;
-  box-shadow:0 6px 18px rgba(0,0,0,.08);
-}
-button{
-  margin-top:8px;
-  padding:6px 12px;
-  background:#ff5a94;
-  border:none;
-  border-radius:8px;
-  color:white;
-  cursor:pointer;
-}
-input{padding:6px;width:100%;margin-top:6px}
-.result{margin-top:8px;font-weight:bold}
-</style>
-  <div class="exam-container">
-    <h1>Exam Tasks - Set E</h1>
-    <div id="tasksList" class="tasks-list"></div>
-</div>
-</head>
-
-
