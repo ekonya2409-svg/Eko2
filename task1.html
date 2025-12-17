@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 1 - Reverse String</title>
+</head>
+<body>
+    <h2>Task 1: Reverse a string</h2>
+    <input type="text" id="inputString" value="Hello World">
+    <button onclick="run()">Reverse It</button>
+    <p id="result"></p>
+
+    <script>
+        function run() {
+            let str = document.getElementById('inputString').value;
+            let reversed = str.split('').reverse().join('');
+            document.getElementById('result').innerText = "Result: " + reversed;
+        }
+    </script>
+    <br>
+    <a href="exam-tasks.html">← Back to list</a>
+</body>
+</html>
