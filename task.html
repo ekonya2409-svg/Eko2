@@ -56,14 +56,36 @@
     footer{margin-top:24px;text-align:center;color:var(--muted);font-size:14px}
 
     /* responsive */
-    @media (max-width:900px){main.grid{grid-template-columns:1fr;}.avatar{width:96px;height:96px;font-size:26px}}
+    @media (max-width:900px){main.grid{grid-template-columns:1fr;}..avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 18px;
+      background: #fff; /* Белый фон на случай, если фото долго грузится */
+      display: block; 
+      object-fit: cover; /* Это важно: фото не будет сжиматься */
+      border: 4px solid var(--glass); /* Красивая полупрозрачная рамка */
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      flex-shrink: 0;
+    }}
   </style>
 </head>
 <body>
   <div class="container">
 
     <header class="site">
-      <div class="avatar">Y</div>
+      <header class="site">
+      <img src="photo.jpg" alt="Profile Photo" class="avatar">
+      
+      <div class="hdr-info">
+        <h1>Yenilik</h1>
+        <p>Student • Volunteer • Web development learner</p>
+        <div class="quick">
+          <a class="btn" href="mailto:ekonya2409@gmail.com">📧 Email</a>
+          <a class="btn" href="https://github.com/ekonya2409-svg" target="_blank">💻 GitHub</a>
+          <a class="btn" href="exam-tasks.html">📝 Exam Tasks</a>
+        </div>
+      </div>
+    </header>
       <div class="hdr-info">
         <h1>Yenilik</h1>
         <p>Student • Volunteer • Web development learner</p>
