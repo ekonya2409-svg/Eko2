@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 13 - Arithmetic</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #fff0f5; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        .card { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 25px rgba(255, 105, 180, 0.2); text-align: center; }
+        h2 { color: #ff69b4; }
+        select, input { padding: 10px; border: 2px solid #ffb6c1; border-radius: 10px; margin: 5px; width: 80px; text-align: center; }
+        button { background: #ff69b4; color: white; border: none; padding: 12px 25px; border-radius: 50px; cursor: pointer; font-weight: bold; margin-top: 15px; }
+        #result { margin-top: 25px; color: #ff69b4; font-size: 1.4em; font-weight: bold; }
+        .back { margin-top: 20px; text-decoration: none; color: #ffb6c1; font-size: 0.9em; display: inline-block; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Task 13: Calculator</h2>
+        <input type="number" id="num1" value="10">
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="number" id="num2" value="5">
+        <br>
+        <button onclick="calculate()">Calculate</button>
+        <div id="result">?</div>
+        <br>
+        <a href="exam-tasks.html" class="back">← Back to Tasks</a>
+    </div>
+    <script>
+        function calculate() {
+            const n1 = parseFloat(document.getElementById('num1').value);
+            const n2 = parseFloat(document.getElementById('num2').value);
+            const op = document.getElementById('operator').value;
+            let res;
+            if(op === '+') res = n1 + n2;
+            else if(op === '-') res = n1 - n2;
+            else if(op === '*') res = n1 * n2;
+            else if(op === '/') res = n1 / n2;
+            document.getElementById('result').innerText = "Result: " + res;
+        }
+    </script>
+</body>
+</html>
