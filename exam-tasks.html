@@ -99,20 +99,7 @@
             <button class="btn-run" onclick="runTask(${task.id})">Выполнить код</button>
             <div id="res-${task.id}" class="result-area">Нажмите кнопку, чтобы увидеть результат</div>
         </div>
-    `;
-    container.appendChild(taskDiv);
-});
-
-function toggleTask(id) {
-    const content = document.getElementById(`content-${id}`);
-    content.classList.toggle('active');
-}
-
-function runTask(id) {
-    const task = taskData.find(t => t.id === id);
-    const result = task.logic();
-    document.getElementById(`res-${id}`).innerText = "Результат: " + result;
-}
+    
 </body>
 </html>
 <!doctype html>
