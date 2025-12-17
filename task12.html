@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 12 - Splice Delete</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #fff0f5; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        .card { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 25px rgba(255, 105, 180, 0.2); text-align: center; }
+        h2 { color: #ff69b4; }
+        button { background: #ff69b4; color: white; border: none; padding: 12px 25px; border-radius: 50px; cursor: pointer; font-weight: bold; }
+        #result { margin-top: 25px; color: #ff69b4; font-size: 1.1em; }
+        .back { margin-top: 20px; text-decoration: none; color: #ffb6c1; font-size: 0.9em; display: inline-block; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Task 12: Splice Method</h2>
+        <p style="color: #888;">Remove "Banana" and "Orange" from:<br>["Apple", "Banana", "Orange", "Kiwi"]</p>
+        <button onclick="removeElements()">Splice Now</button>
+        <div id="result">Result: ?</div>
+        <br>
+        <a href="exam-tasks.html" class="back">← Back to Tasks</a>
+    </div>
+    <script>
+        function removeElements() {
+            let fruits = ["Apple", "Banana", "Orange", "Kiwi"];
+            fruits.splice(1, 2); // Starts at index 1, removes 2 items
+            document.getElementById('result').innerText = "Remaining: " + fruits.join(", ");
+        }
+    </script>
+</body>
+</html>
