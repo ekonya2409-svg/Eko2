@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SET E — Exam Tasks</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#fff5f9;
+  padding:30px;
+}
+h1{
+  color:#ff5a94;
+  margin-bottom:10px;
+}
+p{
+  color:#555;
+  margin-bottom:20px;
+}
+.task{
+  background:#ffffff;
+  padding:20px;
+  margin-bottom:16px;
+  border-radius:14px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+button{
+  margin-top:8px;
+  padding:8px 14px;
+  background:#ff5a94;
+  border:none;
+  border-radius:999px;
+  color:white;
+  cursor:pointer;
+  font-weight:bold;
+}
+input{
+  width:100%;
+  padding:8px;
+  margin-top:6px;
+  border-radius:8px;
+  border:1px solid #ccc;
+}
+.result{
+  margin-top:8px;
+  font-weight:bold;
+}
+.back{
+  display:inline-block;
+  margin-bottom:20px;
+  text-decoration:none;
+  font-weight:bold;
+  color:#ff5a94;
+}
+</style>
+</head>
+
+<body>
+
+<a class="back" href="exam-tasks.html">← Back to Exam Tasks</a>
+
+<h1>SET E — JavaScript Exam Tasks</h1>
+<p>All tasks are implemented using HTML and JavaScript.</p>
+
+<!-- 1 -->
+<div class="task">
+<h3>1. Reverse a string</h3>
+<input id="s1">
+<button onclick="reverseString()">Run</button>
+<div class="result" id="r1"></div>
+</div>
+
+<!-- 2 -->
+<div class="task">
+<h3>2. Extract 3rd and 4th characters</h3>
+<input id="s2">
+<button onclick="extractChars()">Run</button>
+<div class="result" id="r2"></div>
+</div>
+
+<!-- 3 -->
+<div class="task">
+<h3>3. Find longest word</h3>
+<input id="s3">
+<button onclick="longestWord()">Run</button>
+<div class="result" id="r3"></div>
+</div>
+
+<!-- 4 -->
+<div class="task">
+<h3>4. Convert string to lowercase</h3>
+<input id="s4">
+<button onclick="toLower()">Run</button>
+<div class="result" id="r4"></div>
+</div>
+
+<!-- 5 -->
+<div class="task">
+<h3>5. Convert string to uppercase</h3>
+<input id="s5">
+<button onclick="toUpper()">Run</button>
+<div class="result" id="r5"></div>
+</div>
+
+<!-- 6 -->
+<div class="task">
+<h3>6. Count words and special symbols</h3>
+<input id="s6">
+<button onclick="countWords()">Run</button>
+<div class="result" id="r6"></div>
+</div>
+
+<!-- 7 -->
+<div class="task">
+<h3>7. Create array of numbers</h3>
+<button onclick="createArray()">Run</button>
+<div class="result" id="r7"></div>
+</div>
+
+<!-- 8 -->
+<div class="task">
+<h3>8. Display third element</h3>
+<button onclick="thirdElement()">Run</button>
+<div class="result" id="r8"></div>
+</div>
+
+<!-- 9 -->
+<div class="task">
+<h3>9. Find last element from array (popup)</h3>
+<button onclick="lastElement()">Run</button>
+</div>
+
+<!-- 10 -->
+<div class="task">
+<h3>10. Find 10th character from popup input</h3>
+<button onclick="tenthChar()">Run</button>
+</div>
+
+<!-- 11 -->
+<div class="task">
+<h3>11. Apply map() to double elements</h3>
+<button onclick="doubleArray()">Run</button>
+<div class="result" id="r11"></div>
+</div>
+
+<!-- 12 -->
+<div class="task">
+<h3>12. Splice: delete elements</h3>
+<button onclick="spliceArray()">Run</button>
+<div class="result" id="r12"></div>
+</div>
+
+<!-- 13 -->
+<div class="task">
+<h3>13. Arithmetic operations (user choice)</h3>
+<button onclick="arithmetic()">Run</button>
+</div>
+
+<!-- 14 -->
+<div class="task">
+<h3>14. Add two numbers</h3>
+<button onclick="addNumbers()">Run</button>
+</div>
+
+<!-- 15 -->
+<div class="task">
+<h3>15. Multiply two numbers</h3>
+<button onclick="multiplyNumbers()">Run</button>
+</div>
+
+<!-- 16 -->
+<div class="task">
+<h3>16. Divide two numbers</h3>
+<button onclick="divideNumbers()">Run</button>
+</div>
+
+<!-- 17 -->
+<div class="task">
+<h3>17. Check even / odd</h3>
+<button onclick="checkEvenOdd()">Run</button>
+</div>
+
+<!-- 18 -->
+<div class="task">
+<h3>18. Display entered form data</h3>
+<input id="name">
+<input id="email">
+<button onclick="showForm()">Show</button>
+<div class="result" id="r18"></div>
+</div>
+
+<!-- 19 -->
+<div class="task">
+<h3>19. Display form data count</h3>
+<button onclick="countFields()">Count</button>
+<div class="result" id="r19"></div>
+</div>
+
+<!-- 20 -->
+<div class="task">
+<h3>20. Create person object</h3>
+<button onclick="createPerson()">Run</button>
+<div class="result" id="r20"></div>
+</div>
+
+<script>
+function reverseString(){r1.innerText=[...s1.value].reverse().join('')}
+function extractChars(){r2.innerText=s2.value.slice(2,4)}
+function longestWord(){r3.innerText=s3.value.split(' ').sort((a,b)=>b.length-a.length)[0]}
+function toLower(){r4.innerText=s4.value.toLowerCase()}
+function toUpper(){r5.innerText=s5.value.toUpperCase()}
+function countWords(){
+ let w=s6.value.trim().split(/\s+/).length
+ let s=s6.value.replace(/[a-z0-9 ]/gi,'').length
+ r6.innerText=`Words: ${w}, Symbols: ${s}`
+}
+function createArray(){r7.innerText=[1,2,3,4,5]}
+function thirdElement(){r8.innerText=[1,2,3,4,5][2]}
+function lastElement(){alert([1,2,3,4,5].at(-1))}
+function tenthChar(){
+ let t=prompt("Enter text")
+ alert(t && t.length>=10 ? t[9] : "Less than 10 characters")
+}
+function doubleArray(){r11.innerText=[1,2,3].map(x=>x*2)}
+function spliceArray(){
+ let a=[1,2,3,4,5]
+ a.splice(1,2)
+ r12.innerText=a
+}
+function arithmetic(){
+ let a=+prompt("Enter first number")
+ let b=+prompt("Enter second number")
+ let op=prompt("Choose +  -  *  /")
+ alert(eval(a+op+b))
+}
+function addNumbers(){alert(+prompt("a")+ +prompt("b"))}
+function multiplyNumbers(){alert(prompt("a")*prompt("b"))}
+function divideNumbers(){alert(prompt("a")/prompt("b"))}
+function checkEvenOdd(){
+ let n=prompt("Enter number")
+ alert(n%2===0?"Even":"Odd")
+}
+function showForm(){r18.innerText=`${name.value}, ${email.value}`}
+function countFields(){
+ let c=0
+ if(name.value)c++
+ if(email.value)c++
+ r19.innerText=c
+}
+function createPerson(){
+ let person={name:"Yenilik",age:20,city:"Riga"}
+ r20.innerText=JSON.stringify(person)
+}
+</script>
+
+</body>
+</html>
+<a class="task" href="set-e-tasks.html">SET E — All 20 Tasks</a>
