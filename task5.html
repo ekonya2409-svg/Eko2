@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 5 - Uppercase</title>
+    <style>
+        /* Styles are the same to keep the design consistent */
+        body { font-family: 'Segoe UI', sans-serif; background-color: #fff0f5; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        .card { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 25px rgba(255, 105, 180, 0.2); text-align: center; max-width: 400px; width: 90%; }
+        h2 { color: #ff69b4; margin-bottom: 20px; }
+        input { padding: 12px; border: 2px solid #ffb6c1; border-radius: 10px; width: 100%; box-sizing: border-box; margin-bottom: 20px; text-align: center; }
+        button { background: #ff69b4; color: white; border: none; padding: 12px 25px; border-radius: 50px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+        button:hover { background: #ff1493; transform: scale(1.05); }
+        #result { margin-top: 25px; font-weight: bold; color: #ff69b4; font-size: 1.1em; }
+        .back { margin-top: 20px; text-decoration: none; color: #ffb6c1; font-size: 0.9em; display: inline-block; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Task 5: Uppercase</h2>
+        <p style="color: #888;">Enter text to convert it to uppercase:</p>
+        <input type="text" id="userInput" value="hello world">
+        <br>
+        <button onclick="toUpperCase()">Convert</button>
+        <div id="result">Result will appear here</div>
+        <br>
+        <a href="exam-tasks.html" class="back">← Back to Tasks</a>
+    </div>
+
+    <script>
+        function toUpperCase() {
+            const str = document.getElementById('userInput').value;
+            document.getElementById('result').innerText = str.toUpperCase();
+        }
+    </script>
+</body>
+</html>
