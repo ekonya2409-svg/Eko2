@@ -1,22 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task 1 - Reverse String</title>
-</head>
-<body>
-    <h2>Task 1: Reverse a string</h2>
-    <input type="text" id="inputString" value="Hello World">
-    <button onclick="run()">Reverse It</button>
-    <p id="result"></p>
-
-    <script>
-        function run() {
-            let str = document.getElementById('inputString').value;
-            let reversed = str.split('').reverse().join('');
-            document.getElementById('result').innerText = "Result: " + reversed;
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: #fff0f5; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center;
+            height: 100vh; 
+            margin: 0; 
         }
-    </script>
-    <br>
-    <a href="exam-tasks.html">← Back to list</a>
-</body>
-</html>
+        .card { 
+            background: white; 
+            padding: 40px; 
+            border-radius: 20px; 
+            box-shadow: 0 10px 25px rgba(255, 105, 180, 0.2); 
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+        h2 { 
+            color: #ff69b4; 
+            margin-bottom: 20px; 
+        }
+        p {
+            color: #888;
+            margin-bottom: 20px;
+        }
+        input { 
+            padding: 12px; 
+            border: 2px solid #ffb6c1; 
+            border-radius: 10px; 
+            width: 100%; 
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 16px;
+        }
+        button { 
+            background: #ff69b4; 
+            color: white; 
+            border: none; 
+            padding: 12px 25px;
